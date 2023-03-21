@@ -9,7 +9,7 @@ module Teams
     # ==== Example
     #     @data = @mints_user.get_team_types
     def get_team_types
-        @client.raw("get", "/config/teams/team-types")
+        @client.raw('get', "/config/teams/team-types")
     end
     
     # === Get teams.
@@ -18,7 +18,7 @@ module Teams
     # ==== Example
     #     @data = @mints_user.get_teams
     def get_teams
-        @client.raw("get", "/config/teams")
+        @client.raw('get', "/config/teams")
     end
     
     # === Get team.
@@ -31,7 +31,7 @@ module Teams
     # ==== Example
     #     @data = @mints_user.get_team(1)
     def get_team(id)
-        @client.raw("get", "/config/teams/#{id}")
+        @client.raw('get', "/config/teams/#{id}")
     end
 
     # === Create team.
@@ -42,12 +42,12 @@ module Teams
     #
     # ==== Example
     #     data = {
-    #       "title": "New Team",
+    #       title: "New Team",
     #       "team_type_enum": 1
     #     }
     #     @data = @mints_user.create_team(data)
     def create_team(data)
-        @client.raw("post", "/config/teams", nil, data_transform(data))
+        @client.raw('post', "/config/teams", nil, data_transform(data))
     end
     
     # === Update team.
@@ -59,12 +59,12 @@ module Teams
     #
     # ==== Example
     #     data = {
-    #       "title": "New Team Modified",
+    #       title: "New Team Modified",
     #       "team_type_enum": 1,
     #       "members": []
     #     }
     #     @data = @mints_user.update_team(5, data)
     def update_team(id, data)
-        @client.raw("put", "/config/teams/#{id}", nil, data_transform(data))
+        @client.raw('put', "/config/teams/#{id}", nil, data_transform(data))
     end
 end
